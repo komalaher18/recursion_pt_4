@@ -36,7 +36,31 @@ console.log(x[0] === y[0]) // true
 
 function deepDup(arr) {
   // Your code here
+  let newArray = [];
+  for(let i = 0; i < arr.length; i++){
+    if(Array.isArray(arr[i])){
+      newArray.push(deepDup(arr[i]))
+    } else {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
 }
+    // for (let i = 0; i < arr.length; i++){
+  //   if(Array.isArray(arr[i])){
+  //     //console.log(flatten(...arr[i]))
+  //     newArr.push(...flatten(arr[i]))
+  //   }
+  //   else {
+  //     newArr.push(arr[i])
+  //   }
+  // }
+
+  // return newArr
+
+  // if(arr[i].length > 1){
+  //   return flatten(arr.slice(1))
+  // }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
